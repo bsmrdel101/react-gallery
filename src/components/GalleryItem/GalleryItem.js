@@ -1,8 +1,7 @@
 import { useState } from "react";
 
-function GalleryItem({galleryData}) {
+function GalleryItem({galleryImage}) {
     const [showImage, setShowImage] = useState(true);
-    const [likeCount, setLikeCount] = useState(0);
 
     const flipImage = () => {
         if (showImage) {
@@ -14,12 +13,12 @@ function GalleryItem({galleryData}) {
 
     return (
         <>
-            {/* Loop through the gallery list array and render the images, and text. */}
-            <img key={galleryData.id} 
-                src={galleryData.path}
-                onClick={flipImage}/>
-            {/* return (<p key={galleryData.id} onClick={flipImage}>
-                {galleryData.description}</p>); */}
+            {showImage ?
+                <img key={galleryImage.id} 
+                src={galleryImage.path}
+                onClick={flipImage}/> 
+                : 
+                <p onClick={flipImage}>{galleryImage.description}</p>}
         </>
     );
 };

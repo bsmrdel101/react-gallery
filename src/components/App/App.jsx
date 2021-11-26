@@ -5,7 +5,7 @@ import './App.css';
 
 // Import components
 import Header from '../Header/Header';
-import Gallery from '../GalleryList/GalleryList';
+import GalleryList from '../GalleryList/GalleryList';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery galleryData={galleryData}/>
+      <GalleryList galleryData={galleryData}/>
     </div>
   );
 }
