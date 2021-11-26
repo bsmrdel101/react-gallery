@@ -25,6 +25,7 @@ function App() {
     })
     .then((response) => {
       console.log('Gallery List: ', response.data);
+      // Sets 'galleryList' equal to the array that axios brought back.
       setGalleryList(response.data);
     })
     .catch((error) => {
