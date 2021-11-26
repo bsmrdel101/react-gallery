@@ -5,11 +5,11 @@ import './App.css';
 
 // Import components
 import Header from '../Header/Header';
-import Gallery from '../Gallery/Gallery';
+import Gallery from '../GalleryList/GalleryList';
 
 
 function App() {
-  let [galleryList, setGalleryList] = useState([]);
+  let [galleryData, setGalleryData] = useState([]);
 
   //On load, get gallery items
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
     .then((response) => {
       console.log('Gallery List: ', response.data);
       // Sets 'galleryList' equal to the array that axios brought back.
-      setGalleryList(response.data);
+      setGalleryData(response.data);
     })
     .catch((error) => {
       console.log('error: ', error);
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery galleryList={galleryList}/>
+      <Gallery galleryData={galleryData}/>
     </div>
   );
 }
