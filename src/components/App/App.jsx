@@ -16,6 +16,8 @@ function App() {
     getGallery();
   }, []);
 
+  // Axios GET request
+    // Gets the array data from the server
   const getGallery = () => {
     axios({
       method: 'GET',
@@ -23,6 +25,7 @@ function App() {
     })
     .then((response) => {
       console.log('Gallery List: ', response.data);
+      // Sets 'galleryList' equal to the array that axios brought back.
       setGalleryList(response.data);
     })
     .catch((error) => {
@@ -33,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery />
+      <Gallery galleryList={galleryList}/>
     </div>
   );
 }
