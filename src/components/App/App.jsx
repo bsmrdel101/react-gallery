@@ -7,15 +7,34 @@ import './App.css';
 import Header from '../Header/Header';
 import Gallery from '../Gallery/Gallery';
 
+const getGallery = () => {
+  axios({
+    method: 'GET',
+    url: '/gallery'
+  })
+  .then((response) => {
+    console.log('Gallery List: ', response.data);
+    setGalleryList(response.data);
+  })
+  .catch((error) => {
+    console.log('error: ', error);
+  });
+}
+
 function App() {
-    return (
-      <div className="App">
-        <Header />
-        <Gallery />
-        <p>Gallery goes here</p>
-        <img src="images/goat_small.jpg"/>
-      </div>
-    );
+  let [galleryList, setGalleryList] = useState([]);
+
+  //On load, get gallery items
+  useEffect(() => {
+    getGallery();
+  }, []);
+
+  return (
+    <div className="App">
+      <Header />
+      <Gallery />
+    </div>
+  );
 }
 
 export default App;
