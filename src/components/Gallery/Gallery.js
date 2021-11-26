@@ -1,9 +1,13 @@
 
-function Gallery() {
+function Gallery({galleryList}) {
     return (
         <div>
             <p>Gallery goes here</p>
-            <img src="images/goat_small.jpg"/>
+            {galleryList.map(() => {
+                return (
+                    <img src="images/goat_small.jpg"/>
+                );
+            })}
         </div>
     );
 };
