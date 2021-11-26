@@ -16,6 +16,8 @@ function App() {
     getGallery();
   }, []);
 
+  // Axios GET request
+    // Gets the array data from the server
   const getGallery = () => {
     axios({
       method: 'GET',
