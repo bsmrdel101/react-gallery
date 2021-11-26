@@ -3,7 +3,9 @@ import GalleryItem from "../GalleryItem/GalleryItem";
 function GalleryList({galleryData}) {
     return (
         <>
-            <GalleryItem galleryData={galleryData} />
+            {galleryData.map((galleryData) => {
+                <GalleryItem galleryData={galleryData} />
+            })}
         </>
     );
 };
