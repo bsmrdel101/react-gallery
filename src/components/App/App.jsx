@@ -7,19 +7,6 @@ import './App.css';
 import Header from '../Header/Header';
 import Gallery from '../Gallery/Gallery';
 
-const getGallery = () => {
-  axios({
-    method: 'GET',
-    url: '/gallery'
-  })
-  .then((response) => {
-    console.log('Gallery List: ', response.data);
-    setGalleryList(response.data);
-  })
-  .catch((error) => {
-    console.log('error: ', error);
-  });
-}
 
 function App() {
   let [galleryList, setGalleryList] = useState([]);
@@ -28,6 +15,20 @@ function App() {
   useEffect(() => {
     getGallery();
   }, []);
+
+  const getGallery = () => {
+    axios({
+      method: 'GET',
+      url: '/gallery'
+    })
+    .then((response) => {
+      console.log('Gallery List: ', response.data);
+      setGalleryList(response.data);
+    })
+    .catch((error) => {
+      console.log('error: ', error);
+    });
+  }
 
   return (
     <div className="App">
