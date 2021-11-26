@@ -5,7 +5,7 @@ import './App.css';
 
 // Import components
 import Header from '../Header/Header';
-import Gallery from '../GalleryList/GalleryList';
+import GalleryList from '../GalleryList/GalleryList';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     })
     .then((response) => {
       console.log('Gallery List: ', response.data);
-      // Sets 'galleryList' equal to the array that axios brought back.
+      // Sets 'galleryData' equal to the array that axios brought back.
       setGalleryData(response.data);
     })
     .catch((error) => {
@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery galleryData={galleryData}/>
+      <GalleryList galleryData={galleryData} getGallery={getGallery}/>
     </div>
   );
 }

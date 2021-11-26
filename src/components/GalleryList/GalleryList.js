@@ -1,13 +1,13 @@
+import GalleryItem from "../GalleryItem/GalleryItem";
 
-function GalleryList({galleryData}) {
+function GalleryList({galleryData, getGallery}) {
     return (
-        <div>
-            <p>Gallery goes here</p>
+        <>
             {/* Loop through the gallery list array and render the images, and text. */}
-            {galleryData.map((galleryData) => {
-                return <img key={galleryData.id} src="images/goat_small.jpg"/>
+            {galleryData.map((galleryImage) => {
+                return <GalleryItem key={galleryImage.id} galleryImage={galleryImage} getGallery={getGallery} />
             })}
-        </div>
+        </>
     );
 };
 
