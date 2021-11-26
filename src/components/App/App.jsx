@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <GalleryList galleryData={galleryData}/>
+      <GalleryList galleryData={galleryData} getGallery={getGallery}/>
     </div>
   );
 }
