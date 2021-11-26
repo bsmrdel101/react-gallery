@@ -4,9 +4,7 @@ function Gallery({galleryList}) {
         <div>
             <p>Gallery goes here</p>
             {galleryList.map(() => {
-                return (
-                    <img src="images/goat_small.jpg"/>
-                );
+                return <img key="{galleryList.id}" src="images/goat_small.jpg"/>
             })}
         </div>
     );
