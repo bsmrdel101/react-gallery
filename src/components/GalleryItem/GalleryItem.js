@@ -15,11 +15,16 @@ function GalleryItem({galleryData}) {
         <>
             {/* Loop through the gallery list array and render the images, and text. */}
             {galleryData.map((galleryData) => {
-                return (
-                    <img key={galleryData.id} 
-                        src={galleryData.path}
-                        onClick={flipImage}/>
-                );
+                if (showImage) {
+                    return (
+                        <img key={galleryData.id} 
+                            src={galleryData.path}
+                            onClick={flipImage}/>
+                    );
+                } else {
+                    return (<p key={galleryData.id} onClick={flipImage}>
+                        {galleryData.description}</p>);
+                }
             })}
         </>
     );
