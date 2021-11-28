@@ -7,7 +7,6 @@ import './App.css';
 import Header from '../Header/Header';
 import GalleryList from '../GalleryList/GalleryList';
 
-
 function App() {
   let [galleryData, setGalleryData] = useState([]);
 
@@ -36,7 +35,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <GalleryList galleryData={galleryData} getGallery={getGallery}/>
+      <div id="gallery">
+        <GalleryList galleryData={galleryData} getGallery={getGallery}/>
+      </div>
     </div>
   );
 }

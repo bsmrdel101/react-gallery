@@ -5,7 +5,11 @@ function GalleryList({galleryData, getGallery}) {
         <>
             {/* Loop through the gallery list array and render the images, and text. */}
             {galleryData.map((galleryImage) => {
-                return <GalleryItem key={galleryImage.id} galleryImage={galleryImage} getGallery={getGallery} />
+                return (
+                    <div class="gallery-item">
+                        <GalleryItem key={galleryImage.id} galleryImage={galleryImage} getGallery={getGallery} />
+                    </div>
+                );
             })}
         </>
     );
