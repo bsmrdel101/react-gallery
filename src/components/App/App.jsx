@@ -7,7 +7,6 @@ import './App.css';
 import Header from '../Header/Header';
 import GalleryList from '../GalleryList/GalleryList';
 
-
 function App() {
   let [galleryData, setGalleryData] = useState([]);
 
